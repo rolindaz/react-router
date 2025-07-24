@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import NavBar from "../components/NavBar"
 
 export default function Products() {
 
@@ -28,38 +29,64 @@ export default function Products() {
 
     return (
         <>
+            <NavBar />
             <main>
-                <div className="container">
-                    <div className="row row-cols-1 row-cols-md-3 row-cols-lg-4">
-                        {
+                <div className="p-5 mb-4 bg-light rounded-3">
+                    <div className="container-fluid py-5">
+                        <h1 className="display-5 fw-bold">
+                            Shop
+                        </h1>
+                        <p className="col-md-8 fs-4">
+                            Esplora la nostra collezione primavera estate
+                        </p>
+                    </div>
+                </div>
 
-                        }
-                        <div className="col">
-                            <div className="product-card">
-                                <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHwxfHxzaG9lfGVufDB8MHx8fDE3MjEwNDEzNjd8MA&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080" className="card-img-top" alt="Product Image" />
-                                <div className="card-body">
-                                    <h5 className="card-title">Red Nike</h5>
-                                    <p className="card-text">Short product description goes here.</p>
-                                    <div className="d-flex justify-content-between align-items-center">
-                                        <span className="h5 mb-0">$99.99</span>
-                                        <div>
-                                            <i className="bi bi-star-fill text-warning"></i>
-                                            <i className="bi bi-star-fill text-warning"></i>
-                                            <i className="bi bi-star-fill text-warning"></i>
-                                            <i className="bi bi-star-fill text-warning"></i>
-                                            <i className="bi bi-star-half text-warning"></i>
-                                            <small className="text-muted">(4.5)</small>
+                <div className="container py-3">
+                    <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-5">
+                        {
+                            productData.map((product) => {
+                                return (
+                                    <div key={product.id} className="col">
+                                        <div className="product-card h-100 d-flex flex-column p-4">
+                                            <div className="img-wrap">
+                                                <img src={product.image} className="card-img-top p-4" alt={product.title} />
+                                            </div>
+                                            <div className="card-body">
+                                                <h5 className="card-title py-2">
+                                                    {product.title}
+                                                </h5>
+                                                <p className="card-text">
+                                                    {product.description}
+                                                </p>
+                                            </div>
+                                            <div className="product-info pt-2 d-flex flex-column row-gap-3">
+                                                <div className="d-flex justify-content-between align-items-center">
+                                                    <span className="h5 mb-0">
+                                                        $ {product.price}
+                                                    </span>
+                                                    <div>
+                                                        <i className="bi bi-star-fill text-warning"></i>
+                                                        <small className="text-muted">
+                                                            {product.rating.rate}
+                                                        </small>
+                                                        <small className="text-muted">
+                                                            ({product.rating.count})
+                                                        </small>
+                                                    </div>
+                                                </div>
+                                                <div className="card-footer d-flex justify-content-between bg-light">
+                                                    <button className="btn btn-primary btn-sm">Add to Cart</button>
+                                                    <button className="btn btn-outline-secondary btn-sm">
+                                                        <i className="bi bi-heart"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div className="card-footer d-flex justify-content-between bg-light">
-                                        <button className="btn btn-primary btn-sm">Add to Cart</button>
-                                        <button className="btn btn-outline-secondary btn-sm">
-                                            <i className="bi bi-heart"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                                )
+                            })
+                        }
                     </div>
                 </div>
             </main>

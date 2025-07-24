@@ -24,7 +24,9 @@ export default function NavBar() {
         <header>
             <div className="container p-3 d-flex justify-content-between align-items-center">
                 <div className="logo">
-                    <img src="../../logo.jpg" alt="Logo" />
+                    <NavLink to='/'>
+                        <img src="../../logo.jpg" alt="Logo" />
+                    </NavLink>
                 </div>
                 <div className="navLinks">
                     <ul className="list-unstyled d-flex column-gap-5 m-0">
@@ -32,7 +34,7 @@ export default function NavBar() {
                             navLinks.map((link) => {
                                 return (
                                     <li key={link.id}>
-                                        <NavLink className="text-decoration-none text-black" to={link.path}>
+                                        <NavLink className="text-decoration-none text-black fs-5" to={link.path}>
                                             {link.text}
                                         </NavLink>
                                     </li>
