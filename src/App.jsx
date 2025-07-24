@@ -3,6 +3,7 @@ import HomePage from "./pages/HomePage"
 import NavBar from "./components/NavBar"
 import ProductsPage from "./pages/ProductsPage"
 import AboutUsPage from "./pages/AboutUsPage"
+import DefaultLayout from "./layouts/DefaultLayout"
 
 function App() {
 
@@ -10,9 +11,11 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route index Component={HomePage} />
-          <Route path="/products" Component={ProductsPage} />
-          <Route path="/about-us" Component={AboutUsPage} />
+          <Route Component={DefaultLayout}>
+            <Route index Component={HomePage} />
+            <Route path="/products" Component={ProductsPage} />
+            <Route path="/about-us" Component={AboutUsPage} />
+          </Route>
         </Routes>
       </BrowserRouter>
     </>

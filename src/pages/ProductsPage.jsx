@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react"
-import NavBar from "../components/NavBar"
 
 export default function ProductsPage() {
 
@@ -29,7 +28,6 @@ export default function ProductsPage() {
 
     return (
         <>
-            <NavBar />
             <main>
                 <div className="p-5 mb-4 bg-light rounded-3">
                     <div className="container-fluid py-5">
