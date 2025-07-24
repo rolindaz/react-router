@@ -1,8 +1,10 @@
+import NavBar from "../components/NavBar"
 import referenceImgs from "../data/referenceImgs"
 
 export default function HomePage() {
     return (
         <>
+            <NavBar />
             <main>
                 <section className="carousel pb-5">
                     <div className="wrapper overflow-hidden">
