@@ -14,6 +14,10 @@
   width: 80px;
 }
 
+.product-card {
+  max-width: 320px
+}
+
 img {
   width: 100%;
   height: 100%;
