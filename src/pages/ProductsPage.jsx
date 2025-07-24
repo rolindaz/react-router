@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import NavBar from "../components/NavBar"
 
-export default function Products() {
+export default function ProductsPage() {
 
     const url = 'https://fakestoreapi.com/products'
     const [productData, setProductData] = useState([{

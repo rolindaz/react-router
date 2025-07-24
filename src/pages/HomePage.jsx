@@ -37,7 +37,7 @@ export default function HomePage() {
                             Il nostro Blog
                         </h2>
                         <h3 className="text-center">
-                            Conosci i nostri fiori!
+                            Conosci i nostri prodotti per tutte le stagioni!
                         </h3>
                         <div className="row g-3 my-5">
                             {
