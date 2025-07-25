@@ -1,4 +1,12 @@
+import { useState, useEffect } from "react"
+import { useParams } from "react-router-dom"
+
 export default function SingleProductPage() {
+
+    const { id } = useParams()
+    const url = `https://fakestoreapi.com/products/${id}`
+    const [product, setProduct] = useState([])
+
     return (
         <div key={product.id} className="col">
             <div className="product-card h-100 d-flex flex-column p-4">
