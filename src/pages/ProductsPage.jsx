@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import { useEffect, useState } from "react"
 
 export default function ProductsPage() {
@@ -47,7 +48,12 @@ export default function ProductsPage() {
                                 return (
                                     <div key={product.id} className="col">
                                         <div className="product-card h-100 d-flex flex-column p-4">
-                                            <div className="img-wrap">
+                                            <Link className="align-self-center" to={`/products/${product.id}`}>
+                                                <button className="btn btn-primary">
+                                                    View the product
+                                                </button>
+                                            </Link>
+                                            <div className="img-wrap mt-2">
                                                 <img src={product.image} className="card-img-top p-4" alt={product.title} />
                                             </div>
                                             <div className="card-body">
@@ -74,7 +80,9 @@ export default function ProductsPage() {
                                                     </div>
                                                 </div>
                                                 <div className="card-footer d-flex justify-content-between bg-light">
-                                                    <button className="btn btn-primary btn-sm">Add to Cart</button>
+                                                    <button className="btn btn-primary btn-sm">
+                                                        Add to Cart
+                                                    </button>
                                                     <button className="btn btn-outline-secondary btn-sm">
                                                         <i className="bi bi-heart"></i>
                                                     </button>
